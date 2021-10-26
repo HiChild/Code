@@ -1,0 +1,19 @@
+ 	 public static void analyze(String str) {
+            p = 0;
+            char ch;
+            str = str.trim();
+            for (; p < str.length(); p++) {
+                ch = str.charAt(p);
+                if (Character.isDigit(ch)) {
+                    digitCheck(str);
+                } else if (Character.isLetter(ch) || ch == '_') {
+                    letterCheck(str);
+                } else if (ch == '"') {
+                    stringCheck(str);
+                } else if (ch == ' ') {
+                    continue;
+                } else {
+                    symbolCheck(str);
+                }
+            }
+        }
